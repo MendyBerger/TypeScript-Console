@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+        main {
+            display: flex;
+        }
+        textarea {
+            border: 0;
+            height: 100%;
+            flex-grow: 1;
+            resize: none;
+            height: 100vh;
+        }
+        textarea:focus {
+            outline: 0;
+        }
+        .before {
+            padding: 0 10px;
+            color: #4385f2;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <span class="before">></span>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </main>
+    <script src="tab-script.js"></script>
+</body>
+</html>
