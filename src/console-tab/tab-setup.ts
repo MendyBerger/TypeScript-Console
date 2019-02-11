@@ -1,6 +1,6 @@
 chrome.devtools.panels.create("TS Console",
     null,
-    "tab.html",
+    "./console-tab/tab.html",
     null
 );
 

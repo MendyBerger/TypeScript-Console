@@ -32,10 +32,31 @@
     </style>
 </head>
 <body>
+    <form class="tsconfig">
+        <select name="module" id="module">
+            <option selected>none</option>
+            <option>ES2015</option>
+            <option>ESNext</option>
+        </select>
+        <select name="target" id="target">
+            <option>ES3</option>
+            <option>ES5</option>
+            <option>ES2015</option> 
+            <option>ES2016</option> 
+            <option selected>ES2017</option>
+            <option>ES2018</option>
+            <option>ESNext</option>
+        </select>
+        <input type="checkbox" name="strict" id="strict" checked>
+    </form>
     <main>
         <span class="before">></span>
         <textarea name="" id="" cols="30" rows="10"></textarea>
     </main>
-    <script src="tab-script.js"></script>
+    <script type="module" src="tab-script.js"></script>
 </body>
 </html>
+
+<option value=""></option>
+
+
