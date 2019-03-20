@@ -1,7 +1,5 @@
-chrome.devtools.panels.create("TS Console",
-    null,
-    "tab.html",
-    null
+chrome.devtools.panels.create(
+    "TS Console",
+    "icons/icon16.png",
+    "tab.html"
 );
-
-console.log("from: tab.js");
