@@ -15,7 +15,5 @@ input.addEventListener("keyup", e => {
 
 
 function sendToCompiler(tsCode) {
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-        chrome.runtime.sendMessage({ts:tsCode, tabId:tabs[0].id});
-    });
+    chrome.runtime.sendMessage({ts:tsCode, tabId:chrome.devtools.inspectedWindow.tabId});
 }
