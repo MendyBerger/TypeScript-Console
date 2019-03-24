@@ -24,7 +24,7 @@
 	],
 	"background": {
 		"scripts": [
-			"typescript.js",
+			"typescript.min.js",
 			"background-script.js"
 		],
 		"persistent": false
