@@ -9,7 +9,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 
 function runJs(script, tabId){
-    chrome.tabs.sendMessage(tabId, {tsCode: script}, function(response) {});
+    // chrome.tabs.sendMessage(tabId, {tsCode: script}, function(response) {});
+    chrome.tabs.executeScript(tabId, {code: script});
+
 }
 
 
