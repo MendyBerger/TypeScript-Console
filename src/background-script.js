@@ -1,11 +1,20 @@
+let sendResponseRef;
+
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-		let js = getTs(
-			request.ts, 
-			request.url || getRandomFileName()
-		);
+    if(request.type === "checkIfSupportedTab"){
+        sendResponseRef = sendResponse;
+        isSupportedTab(request.tabId);
+        return true;
+    } else {
+        let js = getTs(
+            request.ts, 
+            request.url || getRandomFileName()
+        );
         runJs(js, request.tabId || sender.tab.id);
-	}
-);
+    }
+});
+
 
 
 function runJs(script, tabId){
@@ -46,4 +55,11 @@ function getRandomFileName(){
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     }
     return text + '.ts';
+}
+
+
+function isSupportedTab(tabId) {
+        chrome.tabs.get(tabId, function (tabInfo) {
+            sendResponseRef(!/^(https|http|file|ftp|data)/.test(tabInfo.url));
+        });
 }

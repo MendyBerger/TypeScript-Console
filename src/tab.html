@@ -12,7 +12,10 @@
         body {
             margin: 0;
         }
-        main {
+        body[unsupportedTab] main, .unsupportedMessage {
+            display: none;
+        }
+        main, body[unsupportedTab] .unsupportedMessage {
             display: flex;
         }
         textarea {
@@ -32,6 +35,9 @@
     </style>
 </head>
 <body>
+    <div class="unsupportedMessage">
+        <p>NewTabs are not supported. In order to use this extension please navigate to any website or local file</p>
+    </div>
     <main>
         <span class="before">></span>
         <textarea name="" id="" cols="30" rows="10"></textarea>
