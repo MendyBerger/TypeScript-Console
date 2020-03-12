@@ -60,6 +60,8 @@ function getRandomFileName(){
 
 function isSupportedTab(tabId) {
         chrome.tabs.get(tabId, function (tabInfo) {
-            sendResponseRef(!/^(https|http|file|ftp|data)/.test(tabInfo.url));
+            let supported = /^(https|http|file|ftp|data)/.test(tabInfo.url);
+            if(tabInfo.url.startsWith("https://chrome.google.com")) supported = false;
+            sendResponseRef(!supported);
         });
 }
