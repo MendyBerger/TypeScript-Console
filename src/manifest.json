@@ -1,6 +1,6 @@
 {
 	"name": "TypeScript-Console",
-	"version": "0.3",
+	"version": "0.4",
 	"manifest_version": 2,
 	"description": "In browser TypeScript compiler and console",
 	"minimum_chrome_version": "10.0",
